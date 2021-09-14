@@ -3,6 +3,7 @@ import { Business } from "./Business.js";
 
 const contentTarget = document.querySelector(".allCompanies")
 
+
 export const BusinessList = () => {
     const businessArray = useBusinesses()
     contentTarget.innerHTML = "<h1> Businesses </h1>"

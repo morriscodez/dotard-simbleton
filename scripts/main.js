@@ -1,3 +1,3 @@
-import { BusinessList } from "./BusinessList";
+import { BusinessList } from "./BusinessList.js";
 
 BusinessList()
