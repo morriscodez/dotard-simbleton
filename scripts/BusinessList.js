@@ -1,7 +1,7 @@
 import { useBusinesses } from "./BusinessProvider.js";
 import { Business } from "./Business.js";
 
-const contentTarget = document.querySelector(".businesses")
+const contentTarget = document.querySelector(".allCompanies")
 
 export const BusinessList = () => {
     const businessArray = useBusinesses()

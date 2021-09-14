@@ -12,11 +12,28 @@
   <p> Example libre </p>
   <!-- example text to test DOM -->
 
-  <article class="businesses">
-    <!-- Business list dynamically renders here -->
-  </article>
+  <main class="container">
+    <section class="flexContainer">
+      <div class="flexContainer_left column">
+        <input type="text" placeholder="Enter business name" id="companySearch">
+        <article class="foundCompanies"></article>
+        <article class="allCompanies">
+          <!-- Business list dynamically renders here -->
+        </article>
+        
+      </div>
+      <div class="flexContainer_right column">
+        <input type="text" placeholder="Enter agent name" id="agentSearch">
+        <article class="foundAgents"></article>
+        <article class="allAgents"></article>
+      </div>
+    </section>
+  </main>
+  
+  
+  
 
-  <script src="./scripts/main.js"></script>
+  <script type= "module" src="./scripts/main.js"></script>
 </body>
 
 
