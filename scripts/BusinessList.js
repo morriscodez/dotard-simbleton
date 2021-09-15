@@ -68,6 +68,8 @@ document
                 foundBusinessHTML += Business(business);
             })
             contentTarget.innerHTML = ""
+            NYContentTarget.innerHTML = ""
+            ManufacturingContentTarget.innerHTML = ""
             companySearchResultArticle.innerHTML = foundBusinessHTML
         }
     })
