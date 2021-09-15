@@ -8,13 +8,13 @@ export const PurchaseAgentList = () => {
     const contentTarget = document.querySelector('.allAgents')
 
     let agentHTML = ""
-
+    
+    
     agentArray.forEach(agent => {
-        agentHTML =+ Agent(agent)
+        agentHTML += Agent(agent)
     })
 
-    contentTarget.innerHTML += `<h2 class="purchase-agent-title">Purchasing Agent </h2>
-                                ${agentHTML}`
+    contentTarget.innerHTML += `<h2 class="purchase-agent-title">Purchasing Agent</h2> ${agentHTML}`
 
     // search functionality, agents
 
