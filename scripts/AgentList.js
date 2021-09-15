@@ -4,7 +4,8 @@ import { PurchasingAgents } from "./BusinessProvider.js";
 const contentTarget = document.querySelector(".agents")
 
 export const AgentList = () => {
-    const agentArray = PurchasingAgents()
+    const agentArray = PurchasingAgents
+    
     contentTarget.innerHTML = "<h1> Purchasing Agents </h1>"
 
     agentArray.forEach(agentObj => {

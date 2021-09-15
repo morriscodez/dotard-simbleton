@@ -125,6 +125,9 @@ export const ManufacturingBusinessList = businesses.filter(
 )
 
 // Agents list
+
 export const PurchasingAgents = businesses.map(
-    businessObj => businessObj.purchasingAgent
-)
+    businessObj => {
+        return `${businessObj.purchasingAgent.nameFirst} ${businessObj.purchasingAgent.nameLast}`
+    }
+    )
