@@ -1,14 +1,15 @@
 import { Agent } from "./Agent.js";
-import { PurchasingAgents } from "./BusinessProvider.js";
+import { useBusinesses } from "./BusinessProvider.js";
+import { ExtractPurchaseAgents } from "./ExtractPurchaseAgent.js";
 
-const contentTarget = document.querySelector(".agents")
+export const PurchaseAgentList = () => {
+    const businessArray = useBusinesses()
+    const agentArray = ExtractPurchaseAgents(businessArray)
+    const contentTarget = document.querySelector('.allAgents')
 
-export const AgentList = () => {
-    const agentArray = PurchasingAgents
-    
-    contentTarget.innerHTML = "<h1> Purchasing Agents </h1>"
+    let agentHTML = ""
 
-    agentArray.forEach(agentObj => {
-        contentTarget.innerHTML += Agent(agentObj)
-    });
+    agentArray.forEach(agent => {
+        agentHTML =+ Agent(agent)
+    })
 }
