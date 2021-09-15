@@ -40,3 +40,19 @@ export const ManufacturingBusinesses = () => {
 
 
 
+// Capture business search
+const companySearchResultArticle = document.querySelector(".foundCompanies")
+
+document
+    .querySelector("#companySearch")
+    .addEventListener("keypress", keyPressEvent => {
+        if (keyPressEvent.charCode === 13) {
+            const businessArray = useBusinesses()
+
+            const foundBusiness = searchCriteria => {
+                return businessArray.find(
+                    businessObj => businessObj.companyName === searchCriteria
+                )
+            }
+        }
+    })
