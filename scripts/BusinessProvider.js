@@ -128,6 +128,10 @@ export const ManufacturingBusinessList = businesses.filter(
 
 export const PurchasingAgents = businesses.map(
     businessObj => {
-        return `${businessObj.purchasingAgent.nameFirst} ${businessObj.purchasingAgent.nameLast}`
+        return {
+            "fullName": `${businessObj.purchasingAgent.nameFirst} ${businessObj.purchasingAgent.nameLast}`,
+            "company": `${businessObj.companyName}`,
+            "phoneNumber": `${businessObj.phoneWork}`
+        }
     }
     )
