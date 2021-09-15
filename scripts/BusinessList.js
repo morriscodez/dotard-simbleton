@@ -1,7 +1,8 @@
-import { useBusinesses } from "./BusinessProvider.js";
+import { useBusinesses, NYBusinessList } from "./BusinessProvider.js";
 import { Business } from "./Business.js";
 
 const contentTarget = document.querySelector(".allCompanies")
+const NYContentTarget = document.querySelector(".businessList--NewYork")
 
 
 export const BusinessList = () => {
@@ -15,22 +16,14 @@ export const BusinessList = () => {
     )
 }
 
-export const NYBusinessList = () => {
-    const businessArray = useBusinesses()
+export const NYBusinesses = () => {
+    const NYBusinessArray = NYBusinessList
+    NYContentTarget.innerHTML = "<h1> NY Businesses </h1>"
 
-    const newYorkBusinesses = businesses.filter(businessObject => {
-        if ( businessObject.addressStateCode === "NY") {
-            return true
-        }
-        return false
-    })
-
-    contentTarget.innerHTML = "<h1> NY Businesses </h1>"
-
-    businessArray.forEach(
-        (businessObject) => {
-            contentTarget.innerHTML += Business(businessObject)
-        }
+    NYBusinessArray.forEach(
+        businessObject => {
+            NYContentTarget.innerHTML += Business(businessObject)
+        }    
     )
 }
 

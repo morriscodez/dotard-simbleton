@@ -115,3 +115,7 @@ export const useBusinesses = () => {
     return businesses.slice()
 }
 
+
+export const NYBusinessList = businesses.filter(
+    businessObj => businessObj.addressStateCode === "NY"
+)
