@@ -48,11 +48,26 @@ document
     .addEventListener("keypress", keyPressEvent => {
         if (keyPressEvent.charCode === 13) {
             const businessArray = useBusinesses()
+            const foundBusiness = []
+            const searchKey = keyPressEvent.target.value.toLowerCase()
 
-            const foundBusiness = searchCriteria => {
-                return businessArray.find(
-                    businessObj => businessObj.companyName === searchCriteria
-                )
+            if (searchKey === "") {
+                companySearchResultArticle.innerHTML = ""
+                return BusinessList()
             }
+
+            foundBusiness.push(businessArray.find(business => {
+                return business.companyName.toLowerCase().includes(searchKey)
+            }))
+
+            console.log(foundBusiness)
+
+            let foundBusinessHTML = ""
+
+            foundBusiness.forEach(business => {
+                foundBusinessHTML += Business(business);
+            })
+            contentTarget.innerHTML = ""
+            companySearchResultArticle.innerHTML = foundBusinessHTML
         }
     })
