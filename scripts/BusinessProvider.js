@@ -123,3 +123,8 @@ export const NYBusinessList = businesses.filter(
 export const ManufacturingBusinessList = businesses.filter(
     businessObj => businessObj.companyIndustry === "Manufacturing"
 )
+
+// Agents list
+export const PurchasingAgents = businesses.map(
+    businessObj => businessObj.purchasingAgent
+)
