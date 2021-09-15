@@ -38,7 +38,7 @@ export const PurchaseAgentList = () => {
                 console.log(foundAgent)
                 let foundAgentHTML = ""
                 foundAgent.forEach(agent => {
-                    foundAgentHTML += PurchaseAgentList(agent)
+                    foundAgentHTML += Agent(agent)
                 })
                 contentTarget.innerHTML = ""
                 agentSearchResultArticle.innerHTML = foundAgentHTML
